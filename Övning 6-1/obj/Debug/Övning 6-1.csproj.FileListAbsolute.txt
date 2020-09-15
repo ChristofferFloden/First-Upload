@@ -1,0 +1,7 @@
+C:\Users\christoffer\source\repos\Övning 6-1\bin\Debug\Övning 6-1.exe.config
+C:\Users\christoffer\source\repos\Övning 6-1\bin\Debug\Övning 6-1.exe
+C:\Users\christoffer\source\repos\Övning 6-1\bin\Debug\Övning 6-1.pdb
+C:\Users\christoffer\source\repos\Övning 6-1\obj\Debug\Övning 6-1.csprojAssemblyReference.cache
+C:\Users\christoffer\source\repos\Övning 6-1\obj\Debug\Övning 6-1.csproj.CoreCompileInputs.cache
+C:\Users\christoffer\source\repos\Övning 6-1\obj\Debug\Övning 6-1.exe
+C:\Users\christoffer\source\repos\Övning 6-1\obj\Debug\Övning 6-1.pdb
