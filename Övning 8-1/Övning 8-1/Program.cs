@@ -16,14 +16,14 @@ namespace Övning_8_1
             // Varje boks egenskaper ligger i följande ordning; Författare(string), Titel(string), Antal sidor(int).
             // Barnböcker har även följande egenskaper; Barn/Ungdom(string), Bildbok(bool).
             // Faktaböcker har även följande egenskaper; Svårighetsgrad(int), Ämne(string).
-            // Underhållningsböcker har även följande egenskaper; Genre(string), Roman/Antologi(string)
+            // Underhållningsböcker har även följande egenskaper; Genre(string), Roman/Antologi(bool)
 
             library.Add(new ChildrensBook("Astrid lindgren", "Bröderna Lejonhjärta", 75, "Barnbok", false));
             library.Add(new ChildrensBook("Olle", "Apan och Grodan", 20, "Barnbok", true));
             library.Add(new FactBook("Åke Bloom", "Vilse i min egen trädgård", 50, 2, "Trädgårdsskötsel"));
             library.Add(new FactBook("Mikael Engström", "C# Grunderna", 300, 1, "Programmering"));
-            library.Add(new EntertainmentBook("J.R.R. Tolkien", "Bilbo", 120, "Fantasy", "a Novel"));
-            library.Add(new EntertainmentBook("George R.R. Martin", "Storm of Swords", 420, "Fantasy", "an Anthology"));
+            library.Add(new EntertainmentBook("J.R.R. Tolkien", "Bilbo", 120, "Fantasy", true));
+            library.Add(new EntertainmentBook("George R.R. Martin", "Storm of Swords", 420, "Fantasy", false));
 
             bool listFacts = false;
             bool listEntertainments = false;
@@ -103,8 +103,7 @@ namespace Övning_8_1
                         if (b is EntertainmentBook)
                         {
                             Console.WriteLine("The book is in the genre: " + ((EntertainmentBook)b).BookType);
-                            Console.WriteLine("The book is " + ((EntertainmentBook)b).NovelOrAnthology);
-
+                            Console.WriteLine(((EntertainmentBook)b).NovelOrAnthology ? "This is a novel" : "This is an anthology");
                         }
                         Console.WriteLine();
 
@@ -187,9 +186,9 @@ namespace Övning_8_1
     class EntertainmentBook : Book
     {
         public string BookType { get; set; }
-        public string NovelOrAnthology { get; set; }
+        public bool NovelOrAnthology { get; set; }
 
-        public EntertainmentBook(string theauthor, string thetitle, int numberofpages, string booktype, string noveloranthology)
+        public EntertainmentBook(string theauthor, string thetitle, int numberofpages, string booktype, bool noveloranthology)
         {
             TheAuthor = theauthor;
             TheTitle = thetitle;
