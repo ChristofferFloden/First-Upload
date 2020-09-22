@@ -22,43 +22,125 @@ namespace Övning_8_1
             library.Add(new ChildrensBook("Olle", "Apan och Grodan", 20, "Barnbok", true));
             library.Add(new FactBook("Åke Bloom", "Vilse i min egen trädgård", 50, 2, "Trädgårdsskötsel"));
             library.Add(new FactBook("Mikael Engström", "C# Grunderna", 300, 1, "Programmering"));
-            library.Add(new EntertainmentBook("J.R.R. Tolkien", "Bilbo", 120, "Fantasy", "Roman"));
-            library.Add(new EntertainmentBook("George R.R. Martin", "Storm of Swords", 420, "Fantasy", "Anthology"));
+            library.Add(new EntertainmentBook("J.R.R. Tolkien", "Bilbo", 120, "Fantasy", "a Novel"));
+            library.Add(new EntertainmentBook("George R.R. Martin", "Storm of Swords", 420, "Fantasy", "an Anthology"));
 
+            bool listFacts = false;
+            bool listEntertainments = false;
+            bool listChildrensbooks = false;
 
-
-            foreach (Book b in library)
+            while (true)
             {
-                Console.WriteLine("Author: " + b.TheAuthor);
-                Console.WriteLine("Title: " + b.TheTitle);
-                Console.WriteLine("Number of pages: " + b.NumberOfPages);
+                Console.Clear();
 
-                if (b is ChildrensBook)
+                Console.WriteLine("-< Press to list the respective books >-");
+                Console.Write("\n[E]ntertainmentbooks");
+                if (listEntertainments == true)
+                    Console.Write(" are shown\n");
+                else
+                    Console.Write(" are not shown\n");
+                Console.Write("[C]hildrensbooks");
+                if (listChildrensbooks == true)
+                    Console.Write(" are shown\n");
+                else
+                    Console.Write(" are not shown\n");
+                Console.Write("[F]actbooks");
+                if (listFacts == true)
+                    Console.Write(" are shown\n");
+                else
+                    Console.Write(" are not shown\n");
+
+                Console.WriteLine("-----------------------------------\n");
+                
+
+                foreach (Book b in library)
                 {
-                    Console.WriteLine("Written for: " + ((ChildrensBook)b).ForChildOrYouth);
-
-                    if (((ChildrensBook)b).Picturebook == true)
+                    if (listChildrensbooks == true)
                     {
 
-                                    
-                            
-                    }
+                        Console.WriteLine("Author: " + b.TheAuthor);
+                        Console.WriteLine("Title: " + b.TheTitle);
+                        Console.WriteLine("Number of pages: " + b.NumberOfPages);
 
-                    Console.WriteLine(((ChildrensBook)b).PictureBook ? "This is a picture-book" : "This is not a picture-book");
+                        if (b is ChildrensBook)
+                        {
+                            Console.WriteLine("Written for: " + ((ChildrensBook)b).ForChildOrYouth);
+                            Console.WriteLine(((ChildrensBook)b).PictureBook ? "This is a picture-book" : "This is not a picture-book");
+                        }
+
+                        Console.WriteLine();
+                    }
+                
+                
+                    if (listFacts == true)
+                    {
+
+                        Console.WriteLine("Author: " + b.TheAuthor);
+                        Console.WriteLine("Title: " + b.TheTitle);
+                        Console.WriteLine("Number of pages: " + b.NumberOfPages);
+
+
+                        if (b is FactBook)
+                        {
+                            Console.WriteLine("The book is about: " + ((FactBook)b).BookSubject);
+                            Console.WriteLine("Difficulty level: " + ((FactBook)b).LevelOfDifficulty);
+                        }
+
+                        Console.WriteLine();
+
+                    }
+                
+
+               
+                    if (listEntertainments == true)
+                    {
+
+                        Console.WriteLine("Author: " + b.TheAuthor);
+                        Console.WriteLine("Title: " + b.TheTitle);
+                        Console.WriteLine("Number of pages: " + b.NumberOfPages);
+
+
+                        if (b is EntertainmentBook)
+                        {
+                            Console.WriteLine("The book is in the genre: " + ((EntertainmentBook)b).BookType);
+                            Console.WriteLine("The book is " + ((EntertainmentBook)b).NovelOrAnthology);
+
+                        }
+                        Console.WriteLine();
+
+                    }
                 }
-                if (b is FactBook)
+
+
+
+                ConsoleKeyInfo key = Console.ReadKey();
+
+                if (key.KeyChar == 'f')
                 {
-                    Console.WriteLine("The book is about: " + ((FactBook)b).BookSubject); 
+                    if (listFacts == false)
+                        listFacts = true;
+                    else if (listFacts == true)
+                        listFacts = false;                                        
                 }
-                if (b is EntertainmentBook)
+
+                if (key.KeyChar == 'e')
                 {
-                    Console.WriteLine("The book is in the genre: " + ((EntertainmentBook)b).BookType); 
+                    if (listEntertainments == false)
+                        listEntertainments = true;
+                    else if (listEntertainments == true)
+                        listEntertainments = false;
                 }
-                Console.WriteLine();               
+
+                if (key.KeyChar == 'c')
+                {
+                    if (listChildrensbooks == false)
+                        listChildrensbooks = true;
+                    else if (listChildrensbooks == true)
+                        listChildrensbooks = false;
+                }
+
 
             }
-
-            Console.ReadKey();
         }
     }
 
@@ -82,7 +164,6 @@ namespace Övning_8_1
             BookSubject = booksubject;
             NumberOfPages = numberofpages;
             LevelOfDifficulty = levelofdifficulty;
-
         }
 
     }
@@ -99,7 +180,6 @@ namespace Övning_8_1
             NumberOfPages = numberofpages;
             ForChildOrYouth = forchildoryouth;
             PictureBook = picturebook;
-
         }
 
     }
@@ -116,7 +196,6 @@ namespace Övning_8_1
             NumberOfPages = numberofpages;
             BookType = booktype;
             NovelOrAnthology = noveloranthology;
-
         }
 
     }
