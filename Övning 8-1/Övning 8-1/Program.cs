@@ -18,10 +18,10 @@ namespace Övning_8_1
             // Faktaböcker har även följande egenskaper; Svårighetsgrad(int), Ämne(string).
             // Underhållningsböcker har även följande egenskaper; Genre(string), Roman/Antologi(bool)
 
-            library.Add(new ChildrensBook("Astrid lindgren", "Bröderna Lejonhjärta", 75, "Barnbok", false));
-            library.Add(new ChildrensBook("Olle", "Apan och Grodan", 20, "Barnbok", true));
-            library.Add(new FactBook("Åke Bloom", "Vilse i min egen trädgård", 50, 2, "Trädgårdsskötsel"));
-            library.Add(new FactBook("Mikael Engström", "C# Grunderna", 300, 1, "Programmering"));
+            library.Add(new ChildrensBook("Astrid lindgren", "Bröderna Lejonhjärta", 75, "Youthbook", false));
+            library.Add(new ChildrensBook("Olle", "Apan och Grodan", 20, "Childsbook", true));
+            library.Add(new FactBook("Åke Bloom", "Vilse i min egen trädgård", 50, 1, "Gardening"));
+            library.Add(new FactBook("Mikael Engström", "C# Grunderna", 300, 2, "Programming"));
             library.Add(new EntertainmentBook("J.R.R. Tolkien", "Bilbo", 120, "Fantasy", true));
             library.Add(new EntertainmentBook("George R.R. Martin", "Storm of Swords", 420, "Fantasy", false));
 
