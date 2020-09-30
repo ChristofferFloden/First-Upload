@@ -8,6 +8,9 @@ namespace Tjuv_O_Polis
 {
     class Program
     {
+        // Först några variabler som kommer användas för att visa antal rånade/gripna. 
+        // Sedan några fler som bestämmer hur många av olika "People" som senare kommer befolka "staden". 
+
         static int rånadeMedborgare = 0;
         static int gripnaTjuvar = 0;
 
@@ -18,59 +21,65 @@ namespace Tjuv_O_Polis
 
         public static void Main(string[] args)
         {
-
+            // Skapar en lista staden med en metod som tar in de tidigare definierade antalet People av olika slag.
             List<People> city = CityMetoder.FillCityWithPeople(antalPoliser, antalTjuvar, antalMedborgare);
 
-            while(true)
+            while(true)                                     // Loopen som innehåller hela "spelet".
             {
-                string[,] arrayCity = new string[25,100];
-                string Message = "";
-                for (int h = 0; h < 25; h++)
+
+                string Message = ""; // Tänkt att användas för de olika "meddelanden" som dykar upp vid "händelser", men kommer nog slopas.
+
+                string[,] arrayCity = new string[25,100];  // En 2d-array som är tänkt att använda som "spelbräde"
+
+                for (int h = 0; h < 25; h++) // Bygger den vertikala delen av brädet.
                 {
                     Console.Write($"{arrayCity[h, 0]}");
 
-                    for (int w = 0; w < 100; w++)
+                    for (int w = 0; w < 100; w++) // Bygger den horisontella delen av brädet.
                     {
                         Console.Write($"{arrayCity[0, w]}");
+                                               
+                    }
 
-                        foreach (People p in city)
+                    foreach (People p in city) // Tänkt att se vad som händer när olika People möter varandra, men än så länge... blaha
+                    {
+
+                        if ((((Polis)p).CurrentX) == (((Tjuv)p).CurrentX) && (((Polis)p).CurrentY) == (((Tjuv)p).CurrentY))
                         {
-                             
-                            if ((((Polis)p).CurrentX) == (((Tjuv)p).CurrentX) && (((Polis)p).CurrentY) == (((Tjuv)p).CurrentY))
-                            {
-                                Console.Write("X");
-                                gripnaTjuvar++;
-                            }
-                            else if ((((Medborgare)p).CurrentX) == (((Tjuv)p).CurrentX) && (((Medborgare)p).CurrentY) == (((Tjuv)p).CurrentY))
-                            {
-                                Console.Write("X");
-                                rånadeMedborgare++;
-                            }
-                            
+                            Console.Write("X");
+                            gripnaTjuvar++;
+                        }
+                        else if ((((Medborgare)p).CurrentX) == (((Tjuv)p).CurrentX) && (((Medborgare)p).CurrentY) == (((Tjuv)p).CurrentY))
+                        {
+                            Console.Write("X");
+                            rånadeMedborgare++;
+                        }
 
-                            if (p.CurrentY < 0)
-                            {
-                                p.CurrentY = 25;
-                            }
-                            else if (p.CurrentY > 25)
-                            {
-                                p.CurrentY = 0;
-                            }
-                            else if (p.CurrentX < 0)
-                            {
-                                p.CurrentX = 100;
-                            }
-                            else if (p.CurrentX > 100)
-                            {
-                                p.CurrentX = 0;
-                            }
 
+                        // Följande delar skall se till att ingen faller av brädet utan fortsätter på "andra sidan"
+
+                        if (p.CurrentY < 0)
+                        {
+                            p.CurrentY = 25;
+                        }
+                        else if (p.CurrentY > 25)
+                        {
+                            p.CurrentY = 0;
+                        }
+                        else if (p.CurrentX < 0)
+                        {
+                            p.CurrentX = 100;
+                        }
+                        else if (p.CurrentX > 100)
+                        {
+                            p.CurrentX = 0;
                         }
 
                     }
-                                        
+
 
                 }
+                // Här under brädet skall olika meddelanden skrivas ut mellan ronderna.
                 Console.WriteLine(Message);
                 Console.WriteLine("\nAntal rånade medborgare : " + rånadeMedborgare);
                 Console.WriteLine("Antal gripna tjuvar     : " + gripnaTjuvar);
@@ -81,25 +90,25 @@ namespace Tjuv_O_Polis
                 Message = "";
             }      
         }
-        class CityMetoder
+        class CityMetoder // Tänkt att innehålla metoder för händelser i staden, men just nu även innehåller annat och är inte klart.
         {
             public static int StartX()
             {
                 Random rnd = new Random();
-                int startx = rnd.Next(0, 25);
+                int startx = rnd.Next(0, 100);
 
                 return startx;
             }
             public static int StartY()
             {
                 Random rnd = new Random();
-                int startY = rnd.Next(0, 100);
+                int startY = rnd.Next(0, 25);
 
                 return startY;
             }
-            public static int MoveX()
+            public static int MoveX(int X)
             {
-                int movementX = 0;
+                int movementX = X;
                 Random rnd = new Random();
                 int move = rnd.Next(0, 3);
                 if (move == 1)
@@ -113,9 +122,9 @@ namespace Tjuv_O_Polis
 
                 return movementX;
             }
-            public static int MoveY()
+            public static int MoveY(int Y)
             {
-                int movementY = 0;
+                int movementY = Y;
                 Random rnd = new Random();
                 int move = rnd.Next(0, 3);
                 if (move == 1)
@@ -130,16 +139,17 @@ namespace Tjuv_O_Polis
                 return movementY;
             }
 
-            public static List<People> FillCityWithPeople(int antalPoliser, int antalTjuvar, int antalMedborgare)
+            public static List<People> FillCityWithPeople(int antalPoliser, int antalTjuvar, int antalMedborgare)  // Metoden som befolkar staden.
             {
+                Random rnd = new Random();
                 List<People> city = new List<People>();
                 for (int i = 1; i <= antalPoliser; i++)
                 {
                     People p = new Polis();
                     p.CurrentX = CityMetoder.StartX();
                     p.CurrentY = CityMetoder.StartY();
-                    p.MovementX = CityMetoder.MoveX();
-                    p.MovementY = CityMetoder.MoveY();
+                    p.MovementX = CityMetoder.MoveX(p.CurrentX);
+                    p.MovementY = CityMetoder.MoveY(p.CurrentY);
                     city.Add(p);
                 }
 
@@ -148,8 +158,8 @@ namespace Tjuv_O_Polis
                     People t = new Tjuv();
                     t.CurrentX = CityMetoder.StartX();
                     t.CurrentY = CityMetoder.StartY();
-                    t.MovementX = CityMetoder.MoveX();
-                    t.MovementY = CityMetoder.MoveY();
+                    t.MovementX = CityMetoder.MoveX(t.CurrentX);
+                    t.MovementY = CityMetoder.MoveY(t.CurrentY);
                     city.Add(t);
                 }
 
@@ -158,8 +168,8 @@ namespace Tjuv_O_Polis
                     People c = new Medborgare();
                     c.CurrentX = CityMetoder.StartX();
                     c.CurrentY = CityMetoder.StartY();
-                    c.MovementX = CityMetoder.MoveX();
-                    c.MovementY = CityMetoder.MoveY();
+                    c.MovementX = CityMetoder.MoveX(c.CurrentX);
+                    c.MovementY = CityMetoder.MoveY(c.CurrentY);
                     city.Add(c);
                 }
 
@@ -170,12 +180,13 @@ namespace Tjuv_O_Polis
 
     
 
-    public class People
+    public class People  // Bas-klassen med alla egenskaper och sedan en indelning av de olika sub-klasserna.
     {
         public int CurrentX { get; set; }
         public int CurrentY { get; set; }
         public int MovementX { get; set; }
         public int MovementY { get; set; }
+
 
     }
     public class Polis : People 
