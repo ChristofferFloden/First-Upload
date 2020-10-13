@@ -1,0 +1,19 @@
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\bin\Debug\netcoreapp3.1\Övning 14-2.exe
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\bin\Debug\netcoreapp3.1\Övning 14-2.deps.json
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\bin\Debug\netcoreapp3.1\Övning 14-2.runtimeconfig.json
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\bin\Debug\netcoreapp3.1\Övning 14-2.runtimeconfig.dev.json
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\bin\Debug\netcoreapp3.1\Övning 14-2.dll
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\bin\Debug\netcoreapp3.1\Övning 14-2.pdb
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.csprojAssemblyReference.cache
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2_MarkupCompile.cache
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2_MarkupCompile.lref
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.g.resources
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.AssemblyInfoInputs.cache
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.AssemblyInfo.cs
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.csproj.CoreCompileInputs.cache
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.dll
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.pdb
+C:\Users\christoffer\source\repos\Övning 14-2\Övning 14-2\obj\Debug\netcoreapp3.1\Övning 14-2.genruntimeconfig.cache
