@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="38" Margin="100,39,0,0" Text="123" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="24" TextChanged="setBlueWidth_TextChanged" RenderTransformOrigin="0.662,0.542"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="38" Margin="237,39,0,0" Text="234" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="24" TextChanged="setRedWidth_TextChanged"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="38" Margin="400,39,0,0" Text="345" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="24" TextChanged="setYellowWidth_TextChanged"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="38" Margin="100,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="24" TextChanged="setBlueWidth_TextChanged" RenderTransformOrigin="0.662,0.542"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="38" Margin="237,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="24" TextChanged="setRedWidth_TextChanged"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="38" Margin="400,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="24" TextChanged="setYellowWidth_TextChanged"/>
         <Rectangle x:Name="blueRectangle" HorizontalAlignment="Left" Height="50" Margin="40,130,0,0" Stroke="#FF0017FF" VerticalAlignment="Top" Width="494" Fill="#FF0017FF"/>
         <Rectangle x:Name="redRectangle" HorizontalAlignment="Left" Height="50" Margin="40,215,0,0" Stroke="Red" VerticalAlignment="Top" Width="494" Fill="Red"/>
         <Rectangle x:Name="yellowRectangle" HorizontalAlignment="Left" Height="50" Margin="40,297,0,0" Stroke="#FFE8FF00" VerticalAlignment="Top" Width="494" Fill="#FFE8FF00"/>
